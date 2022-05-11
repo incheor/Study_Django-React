@@ -8,9 +8,15 @@
         <th>장고</th>
         <th>리액트</th>
     </tr>
-    <img width='300' src='https://ubunlog.com/wp-content/uploads/2018/06/Python-logo.png'>
-    <img width='300' src='https://www.djangoproject.com/m/img/logos/django-logo-negative.png'>
-    <img width='300' src='https://www.seekpng.com/png/detail/80-803597_io-is-compatible-with-all-javascript-frameworks-and.png'>
+        <td>
+            <img width='300' src='https://ubunlog.com/wp-content/uploads/2018/06/Python-logo.png'>
+        </td>
+        <td>
+            <img width='300' src='https://www.djangoproject.com/m/img/logos/django-logo-negative.png'>
+        </td>
+        <td>
+            <img width='300' src='https://www.seekpng.com/png/detail/80-803597_io-is-compatible-with-all-javascript-frameworks-and.png'>
+        </td>
 </table>
 
 - Do it Django 책으로 찍먹해봐서 이제는 이론 위주로 공부함!
