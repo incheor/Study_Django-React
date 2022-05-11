@@ -1,7 +1,7 @@
 # Study_Djang-React
 장고와 리액트 공부 시작
 
-- 이번에 공부하는 것
+<h2>이번에 공부하는 것</h2>
 <table>
     <tr>
         <th>파이썬</th>
@@ -19,5 +19,6 @@
         </td>
 </table>
 <br/>
-- Do it Django 책으로 찍먹해봐서 이제는 이론 위주로 공부함!
+
+<h2>Do it Django 책으로 찍먹해봐서 이제는 이론 위주로 공부함!</h2>
 <a href='https://github.com/incheor/Study_Django'>깃허브 링크</a>
