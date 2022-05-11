@@ -22,5 +22,5 @@
 </table>
 <br/>
 
-<p>Do it Django 책으로 찍먹해봐서 이제는 이론 위주로 공부함!</p>
+<h3>Do it Django 책으로 찍먹해봐서 이제는 이론 위주로 공부함!</h3>
 <a href='https://github.com/incheor/Study_Django'>Do it Django 공부했던 깃허브 링크</a>
