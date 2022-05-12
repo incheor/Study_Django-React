@@ -6,13 +6,9 @@
 <h2>이번에 공부하는 것</h2>
 <table>
     <tr>
-        <th>파이썬</th>
         <th>장고</th>
         <th>리액트</th>
     </tr>
-        <td>
-            <img width='300' src='https://ubunlog.com/wp-content/uploads/2018/06/Python-logo.png'>
-        </td>
         <td>
             <img width='300' src='https://www.djangoproject.com/m/img/logos/django-logo-negative.png'>
         </td>
