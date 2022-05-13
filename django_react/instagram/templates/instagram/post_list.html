@@ -1,3 +1,4 @@
+{% load bootstrap4 %}
 <!doctype html>
 <html lang="ko">
     <head>
@@ -17,6 +18,9 @@
         {% for post in post_list %}
             <tr>
                 <td>
+                    {{ post.pk }}
+                </td>
+                <td>
                     {% if post.photo %}
                         <img src="{{ post.photo.url }}" style="width: 100px;"/>
                     {% else %}
@@ -29,5 +33,17 @@
             </tr>
         {% endfor %}
         </table>
+
+        <div>
+            {{ is_paginated }}
+        </div>
+        <div>
+            {{ page_obj }}
+        </div>
+
+        {% if is_paginated %}
+            {% bootstrap_pagination page_obj size="large" justify_content="center" %}
+        {% endif %}
+
     </body>
 </html>

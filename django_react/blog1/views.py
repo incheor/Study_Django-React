@@ -1,3 +1,4 @@
+from django.http import HttpRequest, HttpResponse, Http404
 from django.shortcuts import render
 from .models import Post
 

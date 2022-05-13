@@ -13,13 +13,21 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from ast import pattern
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView, RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',
+        RedirectView.as_view(
+            #  url = '/instagram/'
+            pattern_name = 'instagram:post_list',
+            ),
+        name = 'root'),
     path('blog1/', include('blog1.urls')),
     path('instagram/', include('instagram.urls')),
     path('accounts/', include('accounts.urls')),

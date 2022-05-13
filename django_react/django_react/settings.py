@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # 서드 앱
     'django_extensions',
     'debug_toolbar',
+    'bootstrap4',
     # 로컬 앱
     'blog1',
     'instagram',
@@ -63,7 +64,9 @@ ROOT_URLCONF = 'django_react.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'django_react', 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
