@@ -8,12 +8,16 @@
     <tr>
         <th>장고</th>
         <th>리액트</th>
+        <th>부트스트랩</th>
     </tr>
         <td>
-            <img width='300' src='https://www.djangoproject.com/m/img/logos/django-logo-negative.png'>
+            <img src='https://www.djangoproject.com/m/img/logos/django-logo-negative.png' width='300'>
         </td>
         <td>
-            <img width='300' src='https://www.seekpng.com/png/detail/80-803597_io-is-compatible-with-all-javascript-frameworks-and.png'>
+            <img src='https://www.seekpng.com/png/detail/80-803597_io-is-compatible-with-all-javascript-frameworks-and.png' width='300'>
+        </td>
+        <td>
+            <ima src='https://logovectorseek.com/wp-content/uploads/2019/10/bootstrap-logo-vector.png' width='300'>
         </td>
 </table>
 <br/>
