@@ -17,7 +17,7 @@
             <img src='https://www.seekpng.com/png/detail/80-803597_io-is-compatible-with-all-javascript-frameworks-and.png' width='200'>
         </td>
         <td>
-            <ima src='https://logovectorseek.com/wp-content/uploads/2019/10/bootstrap-logo-vector.png' width='200'>
+            <ima src='https://www.xhtmlteam.com/blog/wp-content/uploads/2020/08/twitter-bootstrap-logo-2.png' width='200'>
         </td>
 </table>
 <br/>
