@@ -10,6 +10,7 @@
         <th>리액트</th>
         <th>부트스트랩</th>
     </tr>
+    <tr>
         <td>
             <img src='https://www.djangoproject.com/m/img/logos/django-logo-negative.png' width='200'>
         </td>
@@ -19,6 +20,7 @@
         <td>
             <ima src='https://www.xhtmlteam.com/blog/wp-content/uploads/2020/08/twitter-bootstrap-logo-2.png' width='200'>
         </td>
+    </tr>
 </table>
 <br/>
 
