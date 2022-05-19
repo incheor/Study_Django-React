@@ -11,10 +11,14 @@
         </div>
     {% endif %}
 
-    {{ post.message }}
+    {{ post.message | linebreaks }}
     <br/>
     <br/>
     <a href="{% url 'instagram:post_list' %}" class="btn btn-primary">
         목록으로 이동
+    </a>
+
+    <a href="{% url 'instagram:post_edit' post.pk %}">
+        수정하기
     </a>
 {% endblock %}
