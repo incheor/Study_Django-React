@@ -41,6 +41,7 @@ class PostListView(ListView):
         })
         return context
 
+
 post_list = PostListView.as_view()
 
 
