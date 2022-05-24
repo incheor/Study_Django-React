@@ -17,4 +17,5 @@ urlpatterns = [
     # path('archive/<year:year>/<month:month>/<day:day>/', views.post_archive_day, name = 'post_archive_day'),
     path('new/', views.post_new, name = 'post_new'),
     path('<int:pk>/edit/', views.post_edit, name = 'post_edit'),
+    path('<int:pk>/delete/', views.post_delete, name = 'post_delete'),
 ]
