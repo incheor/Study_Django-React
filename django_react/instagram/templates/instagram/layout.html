@@ -1,3 +1,4 @@
+<!--{% load bootstrap4 static %}-->
 {% load static %}
 
 <!doctype html>
@@ -56,8 +57,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
+                    {% if messages %}
+                        <div>
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }}" role="alert" >
+                                    {{ message.message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style = "float:right;"></button>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+<!--                    {% bootstrap_javascript jquery=True %}-->
+<!--                    {% bootstrap_messages %}-->
+
                     {% block content %}
-        
                     {% endblock %}
                     <br/>
                     <p>Hello World!</p>

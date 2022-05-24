@@ -1,4 +1,4 @@
-from pyexpat.errors import messages
+from django.contrib import messages
 from django.http import HttpRequest, HttpResponse, Http404
 from django.shortcuts import redirect, render, get_object_or_404
 from .models import Post
@@ -41,7 +41,6 @@ class PostListView(ListView):
         })
         return context
 
-
 post_list = PostListView.as_view()
 
 
@@ -51,6 +50,7 @@ post_list = PostListView.as_view()
 #     q = request.GET.get('q', '')
 #     if q :
 #         qs = qs.filter(message__icontains = q)
+#     messages.error(request, 'messages 테스트 중')
 #     return render(
 #         request,
 #         'instagram/post_list.html',
@@ -94,14 +94,17 @@ def post_new(request):
             post = form.save(commit=False)
             post.author = request.user
             post.save()
+            messages.success(request, '포스트를 저장했습니다')
             return redirect(post)
     else:
         form = PostForm()
+
     return render(
         request,
         'instagram/post_form.html',
         {
             'form': form,
+            'post': None,
         }
     )
 
@@ -121,13 +124,16 @@ def post_edit(request, pk):
             post = form.save(commit=False)
             post.author = request.user
             post.save()
+            messages.success(request, '포스트를 수정했습니다')
             return redirect(post)
     else:
         form = PostForm(instance=post)
+
     return render(
         request,
         'instagram/post_form.html',
         {
             'form': form,
+            'post': post,
         }
     )
