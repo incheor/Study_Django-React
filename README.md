@@ -8,7 +8,6 @@
     <tr>
         <th>장고</th>
         <th>리액트</th>
-        <th>부트스트랩</th>
     </tr>
     <tr>
         <td>
@@ -17,8 +16,6 @@
         <td>
             <img src='https://www.seekpng.com/png/detail/80-803597_io-is-compatible-with-all-javascript-frameworks-and.png' width='300'>
         </td>
-        <td>
-            <img src='https://www.xhtmlteam.com/blog/wp-content/uploads/2020/08/twitter-bootstrap-logo-2.png' width='300'>
         </td>
     </tr>
 </table>
