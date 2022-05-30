@@ -1,0 +1,36 @@
+{% load static %}
+<div class="border-bottom my-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="d-flex flex-column flex-md-row align-items-center pb-3">
+                    <a href="" class="d-flex align-items-center text-dark text-decoration-none">
+                        <img src="{% static 'navbar/Instagram_icon.png' %}" alt="Instagram 아이콘"
+                             style="margin-right:10px; width:40px; height:40px"/>
+                        <img src="{% static 'navbar/Instagram_logo.png' %}" alt="Instagram 로고" style="height:50px"/>
+                    </a>
+                    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                        <a href="" class="me-3 py-2 text-dark text-decoration-none">
+                            <img src="{% static 'navbar/find_friends.png' %}" alt="사람 찾기" aria-label="사람 찾기"
+                                 style="margin-right:10px; height:30px"/>
+                        </a>
+                        <a href="" class="me-3 py-2 text-dark text-decoration-none">
+                            <img src="{% static 'navbar/like_it.png' %}" alt="좋아요" aria-label="좋아요"
+                                 style="margin-right:10px; height:30px"/>
+                        </a>
+                        <a href="{% url 'accounts:profile_edit' %}" class="me-3 py-2 text-dark text-decoration-none">
+                            <!--                            <img src="{% static 'navbar/profile.png' %}" alt="계정" aria-label="계정"-->
+                            <!--                                 style="margin-right:10px; height:30px"/>-->
+                            {% if user.profile %}
+                            <img src="{{user.profile.url }}" style="width:24px; height:24px;"/>
+                            {% else %}
+                            <img src="{% url 'pydenticon_image' data=user.username %}"
+                                 style="width:24px; height:24px;"/>
+                            {% endif %}
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

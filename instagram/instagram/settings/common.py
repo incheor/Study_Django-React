@@ -2,6 +2,10 @@ from pathlib import Path
 import os
 from os.path import abspath, dirname
 
+import collections
+if not hasattr(collections, 'Callable'):
+    collections.Callable = collections.abc.Callable
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
 # BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -29,7 +33,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 서드파티 앱
     'debug_toolbar',
+    'bootstrap5',
+    'django_pydenticon',
     # 로컬 앱
+    'coupang',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +84,8 @@ DATABASES = {
     }
 }
 
+
+AUTH_USER_MODEL = 'accounts.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -126,6 +136,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
+# INTERNAL_IPS = [
+#     "127.0.0.1",
+# ]
