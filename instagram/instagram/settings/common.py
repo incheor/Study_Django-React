@@ -3,6 +3,7 @@ import os
 from os.path import abspath, dirname
 
 import collections
+
 if not hasattr(collections, 'Callable'):
     collections.Callable = collections.abc.Callable
 
@@ -21,7 +22,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -35,9 +35,11 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'bootstrap5',
     'django_pydenticon',
+    'easy_thumbnails',
     # 로컬 앱
     'coupang',
     'accounts',
+    'posting',
 ]
 
 MIDDLEWARE = [
@@ -73,7 +75,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'instagram.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -83,7 +84,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -105,7 +105,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -116,7 +115,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -139,3 +137,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # INTERNAL_IPS = [
 #     "127.0.0.1",
 # ]
+
+LOGIN_REDIRECT_URL = '/'

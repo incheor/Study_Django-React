@@ -1,0 +1,14 @@
+{% extends 'posting/layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <a href="{% url 'posting:post_new' %}" class="btn btn-primary" style="float:right;'">새 포스팅</a>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+
+        </div>
+    </div>
+    {% include 'posting/Timeline_Sidebar.html' %}
+</div>
+{% endblock %}
