@@ -1,0 +1,52 @@
+{% load humanize posting_tags %}
+<div class="card">
+    <dic class="card-header">
+        <img src="{{ post.author.profile_url }}" style="width:24px; height:24px;"/>
+        <!-- url로 넘길 인자는 username -->
+        <a href="{% url 'posting:user_page' post.author.username %}">
+            {{ post.author.name }}
+        </a>
+    </dic>
+    <div class="card-body">
+        <a href="{{ post.get_absolute_url }}" style="" class="">
+            <img src="{{ post.photo.url }}" style="width:100%;"/>
+        </a>
+        <div class="row">
+            <div class="col-sm-1">
+                {% if post|is_like_user:user %}
+                <a href="{% url 'posting:post_unlike' post.pk %}" style="color:red;">
+                    <i class="fa fa-heart"></i>
+                </a>
+                {% else %}
+                <a href="{% url 'posting:post_like' post.pk %}" style="color:red;">
+                    <i class="fa fa-heart-o"></i>
+                </a>
+                {% endif %}
+            </div>
+            <div class="col-sm-7">
+                {% for tag in post.tag_set.all %}
+                <span class="badge bg-dark">
+                    # {{ tag.name }}
+                </span>
+                {% endfor %}
+            </div>
+            <div class="col-sm-4">
+                <a href="{{ post.get_absolute_url }}" style="float:right;" class="text-muted">
+                    <small>
+                        {{ post.created_at|naturaltime }}
+                    </small>
+                </a>
+            </div>
+        </div>
+        {% for comment in post.comment_set.all %}
+        <div class="comment-list">
+            {{ comment.author }}
+            {{ comment.message }}
+            {{ comment.created_at|naturaltime }}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="card-footer">
+        <a href="{% url 'posting:comment_new' post.pk %}">댓글 쓰기</a>
+    </div>
+</div>

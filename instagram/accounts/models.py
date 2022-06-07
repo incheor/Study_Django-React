@@ -10,6 +10,9 @@ class User(AbstractUser):
         # 'DB에 저장되는 값', '보여지는 값'
         MALE = 'M', '남성'
         FEMALE = 'F', '여성'
+    # to(연결할 대상)를 'self'로 지정하면 자기 자신
+    follower_set = models.ManyToManyField('self', blank=True)
+    following_set = models.ManyToManyField('self', blank=True)
 
     website_url = models.URLField(blank=True)
     bio = models.TextField(blank=True)

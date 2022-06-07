@@ -1,35 +1,30 @@
-<div class="row">
-    <div class="col-sm-8">
-        Timeline
+<div class="d-flex p-2">
+    <div class="me-4">
+        <img src="{{ user.profile_url }}" class="rounded-circle" style="width:48px; height:48px;"/>
     </div>
-    <div class="col-sm-4">
-        <div class="d-flex p-2">
-            <div class="me-4">
-                <img src="{{ user.profile_url }}" class="rounded-circle" style="width:48px; height:48px;"/>
-            </div>
-            <div>
-                {{ user.username }}
-                <br/>
-                <small class="text-muted">{{ user.name }}</small>
-            </div>
-        </div>
-        <div class="card mb-3">
-            <div class="card-header text-muted">
-                Stories
-            </div>
-            <div class="card-body text-muted">
-                Stories from people you follow will show up here
-            </div>
-        </div>
-        <div class="card mb-3">
-            <div class="card-header text-muted">
-                Seggestions for you
-            </div>
-            <div class="card-body text-muted">
-                {% include 'posting/user_follow.html' with friend=user %}
-                {% include 'posting/user_follow.html' with friend=user %}
-                {% include 'posting/user_follow.html' with friend=user %}
-            </div>
-        </div>
+    <div>
+        {{ user.username }}
+        <br/>
+        <small class="text-muted">{{ user.name }}</small>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-header text-muted">
+        Stories
+    </div>
+    <div class="card-body text-muted">
+        Stories from people you follow will show up here
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-header text-muted">
+        Seggestions for you
+    </div>
+    <div class="card-body text-muted">
+        {% for suggested_user in suggested_user_list %}
+            {% include 'posting/user_follow.html' %}
+        {% empty %}
+            추천 친구가 없어요
+        {% endfor %}
     </div>
 </div>

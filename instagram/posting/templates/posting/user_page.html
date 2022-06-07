@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row pb-3 mt-4">
         <div class="col-sm-3" style="text-align:center;">
-            <img src="{{ user.profile_url }}" class="rounded-circle" style="width:150px; height:150px;"/>
+            <img src="{{ page_user.profile_url }}" class="rounded-circle" style="width:150px; height:150px;"/>
         </div>
         <div class="col-sm-1">
 
@@ -15,6 +15,22 @@
             <a href="{% url 'accounts:profile_edit' %}" class="btn btn-secondary">
                 프로필 수정
             </a>
+
+<!--            follow 했는지 확인해서 자기자신일 경우-->
+            {% if is_follow == 'Me' %}
+                {{ is_follow }}
+<!--            Trur면 언팔로우 기능-->
+            {% elif is_follow %}
+                <a href="{% url 'accounts:user_unfollow' page_user.username %}">
+                    Unfollow
+                </a>
+<!--            False면 팔로우 기능-->
+            {% else %}
+                <a href="{% url 'accounts:user_follow' page_user.username %}">
+                    Follow
+                </a>
+            {% endif %}
+
             <hr/>
             {{ post_count }} Posts, 0 Followers, 0 Following
             <hr/>

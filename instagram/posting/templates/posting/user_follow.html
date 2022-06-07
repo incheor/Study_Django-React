@@ -1,11 +1,13 @@
 <div class="d-flex mb-1">
     <div class="me-2">
-        <img src="{{ friend.profile_url }}" class="rounded-circle" style="width:50px; height:50px;"/>
+        <img src="{{ suggested_user.profile_url }}" class="rounded-circle" style="width:50px; height:50px;"/>
     </div>
     <div class="">
-        {{ friend.username }}
+        <a href="{% url 'posting:user_page' suggested_user.username %}">
+            {{ suggested_user.username }}
+        </a>
     </div>
     <div class="ms-auto">
-        <a href="#" class="badge bg-primary">Follow</a>
+        <a href="{% url 'accounts:user_follow' suggested_user.username %}" class="badge bg-light text-dark">Follow</a>
     </div>
 </div>

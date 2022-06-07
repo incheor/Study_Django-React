@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.views import (
     LoginView, logout_then_login,
     PasswordChangeView as authPasswordChangeView
@@ -10,6 +10,8 @@ from django.urls import reverse_lazy
 
 from .forms import SignupForm, ProfileForm, PasswordChangeForm
 from django.contrib.auth import login as auth_login
+
+from .models import User
 
 login = LoginView.as_view(template_name='accounts/login_form.html', next_page='/')
 
@@ -66,3 +68,29 @@ class PasswordChangeView(LoginRequiredMixin, authPasswordChangeView):
 
 
 password_change = PasswordChangeView.as_view()
+
+
+# follow, unfollow는 로그인을 해야함
+@login_required
+# urls에서 username을 넘겼으니 views 단에서 받아줘야 함
+def user_follow(request, username):
+    follow_user = get_object_or_404(User, username=username, is_active=True)
+    # 현재 유저(request.user)가 다른 유저(follow_user)를 팔로우함
+    request.user.following_set.add(follow_user)
+    # 거꾸로 다른 유저 입장에서는 팔로우를 당함
+    follow_user.follower_set.add(request.user)
+    messages.success(request, f'{follow_user}님을 팔로우했어요')
+    redirect_url = request.META.get('HTTP_REFERER', 'ROOT')
+    return redirect(redirect_url)
+
+
+@login_required
+def user_unfollow(request, username):
+    unfollow_user = get_object_or_404(User, username=username, is_active=True)
+    # 현재 유저(request.user)가 다른 유저(follow_user)를 언팔로우함(팔로우 제거, remove)
+    request.user.following_set.remove(unfollow_user)
+    # 거꾸로 다른 유저 입장에서는 언팔로우를 당함(팔로우 제거, remove)
+    unfollow_user.follower_set.remove(request.user)
+    messages.success(request, f'{unfollow_user}님을 언팔로우했어요')
+    redirect_url = request.META.get('HTTP_REFERER', 'ROOT')
+    return redirect(redirect_url)

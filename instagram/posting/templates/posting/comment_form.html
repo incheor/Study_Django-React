@@ -1,11 +1,13 @@
 {% extends 'posting/layout.html' %}
 
 {% block content %}
+
 <div class="container">
     <div class="row">
-        <div class="col-sm-12">
-            {% include 'posting/_post_card.html' %}
+        <div class="col-sm-8 offset-sm-2">
+            {% include '_form.html' with form_title='새 댓글' submit_label='새 댓글' %}
         </div>
     </div>
 </div>
+
 {% endblock %}
