@@ -1,4 +1,4 @@
-{% load humanize posting_tags %}
+{% load bootstrap5 humanize posting_tags %}
 <div class="card">
     <dic class="card-header">
         <img src="{{ post.author.profile_url }}" style="width:24px; height:24px;"/>
@@ -11,42 +11,68 @@
         <a href="{{ post.get_absolute_url }}" style="" class="">
             <img src="{{ post.photo.url }}" style="width:100%;"/>
         </a>
-        <div class="row">
-            <div class="col-sm-1">
-                {% if post|is_like_user:user %}
-                <a href="{% url 'posting:post_unlike' post.pk %}" style="color:red;">
-                    <i class="fa fa-heart"></i>
-                </a>
-                {% else %}
-                <a href="{% url 'posting:post_like' post.pk %}" style="color:red;">
-                    <i class="fa fa-heart-o"></i>
-                </a>
-                {% endif %}
-            </div>
-            <div class="col-sm-7">
-                {% for tag in post.tag_set.all %}
-                <span class="badge bg-dark">
-                    # {{ tag.name }}
-                </span>
-                {% endfor %}
-            </div>
-            <div class="col-sm-4">
-                <a href="{{ post.get_absolute_url }}" style="float:right;" class="text-muted">
-                    <small>
-                        {{ post.created_at|naturaltime }}
-                    </small>
-                </a>
-            </div>
+        <div>
+            {% if post|is_like_user:user %}
+            <a href="{% url 'posting:post_unlike' post.pk %}" style="color:red;">
+                <i class="fa fa-heart"></i>
+            </a>
+            {% else %}
+            <a href="{% url 'posting:post_like' post.pk %}" style="color:red;">
+                <i class="fa fa-heart-o"></i>
+            </a>
+            {% endif %}
         </div>
-        {% for comment in post.comment_set.all %}
-        <div class="comment-list">
-            {{ comment.author }}
-            {{ comment.message }}
-            {{ comment.created_at|naturaltime }}
+        <div id="post-{{ post.pk }}-comment-list" class="comment-list">
+            {% for comment in post.comment_set.all %}
+                {% include 'posting/_comment.html' %}
+            {% endfor %}
         </div>
-        {% endfor %}
+        <div>
+            {% for tag in post.tag_set.all %}
+            <span class="badge bg-dark">
+                # {{ tag.name }}
+            </span>
+            {% endfor %}
+        </div>
+        <div>
+            <a href="{{ post.get_absolute_url }}" class="text-muted">
+                <small>
+                    {{ post.created_at|naturaltime }}
+                </small>
+            </a>
+        </div>
     </div>
     <div class="card-footer">
-        <a href="{% url 'posting:comment_new' post.pk %}">댓글 쓰기</a>
+        <form id="post-{{ post.pk }}-comment-form" action="{% url 'posting:comment_new' post.pk %}" method="POST">
+            {% csrf_token %}
+            {% bootstrap_form comment_form %}
+            <div class="d-grid gap-2">
+                <input type="submit" value="댓글 쓰기" class="btn btn-outline-primary mb-2"/>
+            </div>
+        </form>
+
+        <script>
+            $(function() {
+                var form_id = "post-{{ post.pk }}-comment-form";
+                $("#" + form_id).submit(function(e) {
+                    e.preventDefault();
+    
+                    var options = {
+                        success: function(responseText, statusText, xhr, $form) {
+                            console.group("ajaxSubmit response");
+                            console.log(responseText);
+                            console.log(statusText);
+                            console.log(xhr);
+                            console.log($form);
+                            console.groupEnd();
+    
+                            $("#post-{{ post.pk }}-comment-list").prepend(responseText);
+                        }
+                    };
+                    $(this).ajaxSubmit(options);
+                });
+                console.log("document ready.");
+            });
+        </script>
     </div>
 </div>
