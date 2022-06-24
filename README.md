@@ -22,7 +22,14 @@
 </table>
 <br/>
 
-<a href="https://github.com/incheor/Study_Django">Do it Django 공부했던 거 깃허브 링크</a>
-<a href="https://github.com/incheor/Study_DRF">DRF 공부했던 거 깃허브 링크</a>
-<a href="https://github.com/incheor/Study_React">리액트 공부했던 거 깃허브 링크</a>
-<br/>
+<ul>
+    <li>
+        <a href="https://github.com/incheor/Study_Django">Do it Django 공부했던 거 깃허브 링크</a>
+    </li>
+    <li>
+        <a href="https://github.com/incheor/Study_DRF">DRF 공부했던 거 깃허브 링크</a>
+    </li>
+    <li>
+        <a href="https://github.com/incheor/Study_React">리액트 공부했던 거 깃허브 링크</a>    
+    </li>
+</ul>
