@@ -9,14 +9,18 @@
     <tr>
         <th>장고</th>
         <th>리액트</th>
+        <th>DRF</th>
     </tr>
     <tr>
         <td>
-            <img src='https://www.djangoproject.com/m/img/logos/django-logo-negative.png' width='300'>
+            <img src='https://www.djangoproject.com/m/img/logos/django-logo-negative.png' width='300' />
         </td>
         <td>
-            <img src='https://www.seekpng.com/png/detail/80-803597_io-is-compatible-with-all-javascript-frameworks-and.png' width='300'>
+            <img src='https://www.seekpng.com/png/detail/80-803597_io-is-compatible-with-all-javascript-frameworks-and.png' width='300' />
         </td>
+        <td>
+            <img src='https://www.django-rest-framework.org/img/logo.png'
+            width='300' />
         </td>
     </tr>
 </table>
