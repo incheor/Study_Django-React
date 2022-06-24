@@ -19,7 +19,7 @@
             <img src='https://www.seekpng.com/png/detail/80-803597_io-is-compatible-with-all-javascript-frameworks-and.png' width='300' />
         </td>
         <td>
-            <img src='http://3.bp.blogspot.com/-3xm0ftuElPM/Vg621Abo8UI/AAAAAAAAAYM/98WXzr3yY54/w1200-h630-p-k-no-nu/restframework.png'
+            <img src='https://res.cloudinary.com/practicaldev/image/fetch/s--MfVqWnwL--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://thepracticaldev.s3.amazonaws.com/i/pgwkazyf2b5q8kqzxzda.jpg'
             width='300' />
         </td>
     </tr>
