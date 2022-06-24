@@ -19,7 +19,7 @@
             <img src='https://www.seekpng.com/png/detail/80-803597_io-is-compatible-with-all-javascript-frameworks-and.png' width='300' />
         </td>
         <td>
-            <img src='https://www.django-rest-framework.org/img/logo.png'
+            <img src='http://3.bp.blogspot.com/-3xm0ftuElPM/Vg621Abo8UI/AAAAAAAAAYM/98WXzr3yY54/w1200-h630-p-k-no-nu/restframework.png'
             width='300' />
         </td>
     </tr>
