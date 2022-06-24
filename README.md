@@ -1,4 +1,5 @@
 # Study_Djang-React
+
 장고와 리액트 공부 시작
 <br/>
 <br/>
@@ -21,6 +22,7 @@
 </table>
 <br/>
 
-<h3>Do it Django 책으로 찍먹해봐서 이제는 이론 위주로 공부함</h3>
-<a href='https://github.com/incheor/Study_Django'>Do it Django 공부했던 깃허브 링크</a>
+<a href="https://github.com/incheor/Study_Django">Do it Django 공부했던 거 깃허브 링크</a>
+<a href="https://github.com/incheor/Study_DRF">DRF 공부했던 거 깃허브 링크</a>
+<a href="https://github.com/incheor/Study_React">리액트 공부했던 거 깃허브 링크</a>
 <br/>
